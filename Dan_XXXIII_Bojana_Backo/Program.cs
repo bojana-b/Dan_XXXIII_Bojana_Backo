@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -159,10 +160,12 @@ namespace Dan_XXXIII_Bojana_Backo
                 }
                 Console.WriteLine("{0} is created!", threads[i].Name);
             }
-
+            var watch = Stopwatch.StartNew();
             threads[0].Start();
             threads[1].Start();
-            threads[1].Join();
+            threads[0].Join();
+            threads[0].Join();
+            Console.WriteLine("DONE: {0} Milliseconds", watch.ElapsedMilliseconds);
             threads[2].Start();
             threads[3].Start();
 
