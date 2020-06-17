@@ -164,7 +164,7 @@ namespace Dan_XXXIII_Bojana_Backo
             threads[0].Start();
             threads[1].Start();
             threads[0].Join();
-            threads[0].Join();
+            threads[1].Join();
             Console.WriteLine("DONE: {0} Milliseconds", watch.ElapsedMilliseconds);
             threads[2].Start();
             threads[3].Start();
